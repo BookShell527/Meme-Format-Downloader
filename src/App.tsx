@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ContextProvider from "./context/context";
+import Home from './pages/Home';
+import Error from './pages/Error'
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <ContextProvider>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route component={Error} />
+        </Switch>
+      </ContextProvider>
+    </BrowserRouter>
+  )
 }
 
 export default App;
