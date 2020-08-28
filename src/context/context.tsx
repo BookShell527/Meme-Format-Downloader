@@ -29,18 +29,34 @@ const ContextProvider: React.FC<Context> = ({ children }) => {
         body.style.backgroundColor = "#fff";
     }
 
-    React.useEffect(() => {
-        setDark(Boolean(localStorage.getItem("dark")))
-    }, [setDark])
-    
     const darkMode = () => {
-        setDark(prev => !prev)
-        if (dark) localStorage.setItem("dark", "false");
-        else localStorage.setItem("dark", "true");
+        setDark((prev: boolean) => !prev)
+    }
+
+    const download = async (img: string) => {
+        try {
+            const req = await axios({
+                url: img,
+                method: "GET",
+                responseType: "blob"
+            });
+            const url: string = window.URL.createObjectURL(new Blob([req.data]));
+
+            const link: HTMLAnchorElement = document.createElement('a');
+
+            link.href = url;
+            link.setAttribute('download', img);
+
+            document.body.appendChild(link);
+
+            link.click();
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     return (
-        <context.Provider value={{dark, darkMode, meme}}>
+        <context.Provider value={{dark, darkMode, meme, download}}>
             { children }
         </context.Provider>
     )
