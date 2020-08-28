@@ -18643,7 +18643,10 @@ video {
   animation: bounce 1s infinite;
 }
 
+/* nav */
+
 .navbar-light {
+  height: 3.5rem;
   width: 100vw;
   --bg-opacity: 1;
   background-color: #4fd1c5;
@@ -18656,9 +18659,11 @@ video {
   padding-bottom: 0.75rem;
   position: fixed;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  z-index: 10;
 }
 
 .navbar-dark {
+  height: 3.5rem;
   background-color: #333 !important;
   width: 100vw;
   display: flex;
@@ -18669,7 +18674,36 @@ video {
   padding-bottom: 0.75rem;
   position: fixed;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 10;
 }
+
+.navbar-icons {
+  transform: scale(1.5);
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  margin-left: auto;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+/* card */
+
+.card-btn {
+  border-radius: 0.25rem;
+  text-decoration: none;
+  --bg-opacity: 1;
+  background-color: #4fd1c5;
+  background-color: rgba(79, 209, 197, var(--bg-opacity));
+  padding: 0.5rem;
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* loader */
 
 .loader {
   border: 16px solid #f3f3f3;

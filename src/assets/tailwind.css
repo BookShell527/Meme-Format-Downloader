@@ -2,15 +2,29 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* nav */
 .navbar-light {
-    @apply w-screen bg-teal-400 flex items-center px-6 py-3 fixed shadow-lg;
+    height: 3.5rem;
+    @apply w-screen bg-teal-400 flex items-center px-6 py-3 fixed shadow-lg z-10;
 }
 
 .navbar-dark {
+    height: 3.5rem;
     background-color: #333 !important;
-    @apply w-screen flex items-center px-6 py-3 fixed shadow-md;
+    @apply w-screen flex items-center px-6 py-3 fixed shadow-md z-10;
 }
 
+.navbar-icons {
+    transform: scale(1.5);
+    @apply text-white ml-auto mr-6 cursor-pointer;
+}
+
+/* card */
+.card-btn {
+    @apply rounded no-underline bg-teal-400 p-2 text-white font-semibold mt-2;
+}
+
+/* loader */
 .loader {
     border: 16px solid #f3f3f3;
     border-top: 16px solid #3498db;

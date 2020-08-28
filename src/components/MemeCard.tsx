@@ -11,11 +11,11 @@ type Meme = {
 const MemeCard: React.FC<Meme> = ({ id, name, url }) => {
     const { download } = React.useContext(context)
     return (
-        <div className="card hover:shadow-md text-center d-inline-block ml-4 mt-5" style={{width: "18rem"}}>
+        <div className="card hover:shadow-md d-inline-block text-center ml-4 mt-5" style={{width: "18rem"}}>
             <img src={url} className="card-img-top" alt={name} />
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
-                <button id={id} className="rounded no-underline bg-teal-400 p-2 text-white font-semibold mt-2" onClick={() => download(url)}>Download</button>
+                <button id={id} className="card-btn hover:bg-teal-500" onClick={() => download(url)}>Download</button>
             </div>
         </div>
     )

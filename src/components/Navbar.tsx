@@ -6,14 +6,14 @@ import { context } from "../context/context";
 const Navbar: React.FC = () => {
     const { dark, darkMode } = React.useContext(context)
     return (
-        <div className={dark ? "navbar-dark" : "navbar-light z-10"} style={{height: "3.5rem"}}>
+        <div className={dark ? "navbar-dark" : "navbar-light"}>
             <Link to="/" className="text-decoration-none">
                 <h1 className="text-2xl ml-6 text-white">Meme F Downloader</h1>
             </Link>
             {
                 dark 
-                ? <FaSun className="text-white ml-auto mr-6 cursor-pointer" style={{transform: "scale(1.5)"}} onClick={darkMode} />
-                : <FaMoon className="text-white ml-auto mr-6 cursor-pointer" style={{transform: "scale(1.5)"}} onClick={darkMode} />
+                ? <FaSun className="navbar-icons" onClick={darkMode} />
+                : <FaMoon className="navbar-icons" onClick={darkMode} />
             }
         </div>
     )
