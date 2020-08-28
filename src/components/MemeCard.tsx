@@ -1,23 +1,23 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { context } from '../context/context';
+import { Box, Image } from "@chakra-ui/core";
 
 type Meme = {
-    id: string;
     name: string;
     url: string;
 }
 
-const MemeCard: React.FC<Meme> = ({ id, name, url }) => {
+const MemeCard: React.FC<Meme> = ({ name, url }) => {
     const { download } = React.useContext(context)
     return (
-        <div className="card hover:shadow-md d-inline-block text-center ml-4 mt-5" style={{width: "18rem"}}>
-            <img src={url} className="card-img-top" alt={name} />
-            <div className="card-body">
-                <h5 className="card-title">{name}</h5>
-                <button id={id} className="card-btn hover:bg-teal-500" onClick={() => download(url)}>Download</button>
-            </div>
-        </div>
+        <Box textAlign="center" maxW="sm" borderWidth="1px" overflow="hidden" pb="3" style={{width: "18rem"}} d="inline-block" ml="3" mt="3" className="hover:shadow-md rounded-md" >
+            <Image src={url} alt={name} />
+            <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated py="2" textAlign="center" >
+                {name}
+            </Box>
+            <button className="card-btn hover:bg-teal-500" onClick={() => download(url)}>Download</button>
+        </Box>
     )
 }
 

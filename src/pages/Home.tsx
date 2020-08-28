@@ -23,19 +23,21 @@ const Home: React.FC = () => {
         )
     } else {
         return (
-            <div className="pt-20 px-10">
-                {
-                    meme.map((m: any) => {
-                        return (
-                            <MemeCard 
-                                id={m.id}
-                                name={m.name}
-                                url={m.url}
-                            />
-                        )
-                    })
-                }
-            </div>
+            <>
+                <div className="pt-10 px-10">
+                    {
+                        meme.map((m: any) => {
+                            return (
+                                <MemeCard 
+                                    key={m.id}
+                                    name={m.name}
+                                    url={m.url}
+                                />
+                            )
+                        })
+                    }
+                </div>
+            </>
         )
     }
 }
