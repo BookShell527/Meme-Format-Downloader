@@ -6,7 +6,7 @@ import { context } from "../context/context";
 const Navbar: React.FC = () => {
     const { dark, darkMode } = React.useContext(context)
     return (
-        <div className="w-screen bg-teal-400 flex items-center px-6 py-3 fixed shadow-lg" style={{height: "3.5rem"}}>
+        <div className={dark ? "navbar-dark" : "navbar-light"} style={{height: "3.5rem"}}>
             <Link to="/" className="no-underline">
                 <h1 className="text-2xl ml-6 text-white">Meme F Downloader</h1>
             </Link>
