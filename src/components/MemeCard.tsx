@@ -9,9 +9,9 @@ type Meme = {
 }
 
 const MemeCard: React.FC<Meme> = ({ name, url }) => {
-    const { download } = React.useContext(context)
+    const { download, dark } = React.useContext(context)
     return (
-        <Box textAlign="center" maxW="sm" borderWidth="1px" overflow="hidden" pb="3" style={{width: "18rem"}} d="inline-block" ml="3" mt="3" className="hover:shadow-md rounded-md" >
+        <Box textAlign="center" maxW="sm" borderWidth="1px" overflow="hidden" pb="3" d="inline-block" ml="3" mt="3" className={`hover:shadow-md rounded-md ${dark && "text-white"}`} style={{backgroundColor: dark && "#181a1b", width: "18rem"}} >
             <Image src={url} alt={name} />
             <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated py="2" textAlign="center" >
                 {name}
