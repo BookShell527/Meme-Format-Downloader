@@ -16,6 +16,7 @@ const ContextProvider: React.FC<Context> = ({ children }) => {
             const memes = await axios.get("https://api.imgflip.com/get_memes");
             setMeme(memes.data.data.memes);
         }
+        setDark(Boolean(localStorage.getItem("dark")))
         getMemes()
     }, [])
 
@@ -30,7 +31,10 @@ const ContextProvider: React.FC<Context> = ({ children }) => {
     }
 
     const darkMode = () => {
-        setDark((prev: boolean) => !prev)
+        setDark((prev: boolean) => !prev);
+
+        const isAlreadyDark = dark ? "" : "true";
+        localStorage.setItem("dark", isAlreadyDark)
     }
 
     const download = async (img: string) => {

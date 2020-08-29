@@ -25,7 +25,7 @@ const MemeCard: React.FC<Meme> = ({ id, name, url, width, height }) => {
             <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated py="2" textAlign="center" >
                 {name}
             </Box>
-            <button className={`card-btn hover:bg-teal-500`} style={{backgroundColor: dark && "#333"}} onClick={() => download(url)}>Download</button>
+            <button className="card-btn hover:bg-teal-500" style={{backgroundColor: dark && "#333"}} onClick={() => download(url)}>Download</button>
             <div className="showImgDiv" id={id} hidden onClick={showAndHideImg}>
                 <Image src={url} alt={name} width={width/3} height={height/3} className="imgDiv" />
             </div>
