@@ -5,7 +5,7 @@ import {useSpring, animated} from 'react-spring'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home: React.FC = () => {
-    const { meme } = React.useContext(context);
+    const { meme, dark } = React.useContext(context);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("")
 
@@ -27,8 +27,11 @@ const Home: React.FC = () => {
         return (
             <MemeCard 
                 key={item.id}
+                id={item.id}
                 name={item.name}
                 url={item.url}
+                width={item.width}
+                height={item.height}
             />
         )
     }
@@ -40,7 +43,7 @@ const Home: React.FC = () => {
     } else {
         return (
             <div className="pt-20">
-                <input className="form-control ml-auto col-2 mr-10" type="search" placeholder="Search" aria-label="Search" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} />
+                <input className="form-control ml-auto col-2 mr-10 text-white" style={{backgroundColor: dark && "#333"}} type="search" placeholder="Search" aria-label="Search" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} />
                 <div>
                     {
                         meme.map((m: any) => {

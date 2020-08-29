@@ -24,6 +24,23 @@
     @apply rounded no-underline bg-teal-400 p-2 text-white font-semibold mt-2;
 }
 
+.showImgDiv {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.25);
+    z-index: -1;
+    @apply fixed h-full overflow-y-scroll ;
+}
+
+.imgDiv {
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* loader */
 .loader {
     border: 16px solid #f3f3f3;

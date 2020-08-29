@@ -18703,6 +18703,24 @@ video {
   margin-top: 0.5rem;
 }
 
+.showImgDiv {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.25);
+  position: fixed;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.imgDiv {
+  position: relative;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* loader */
 
 .loader {
